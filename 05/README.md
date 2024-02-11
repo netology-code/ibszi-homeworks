@@ -1,4 +1,4 @@
-<img width="497" alt="Снимок экрана 2024-02-11 в 16 49 35" src="https://github.com/netology-code/ibszi-homeworks/assets/96241243/ded1c810-84ac-4413-94e0-c1544146b811"># Домашнее задание к занятию «Средства антивирусной защиты»
+# Домашнее задание к занятию «Средства антивирусной защиты»
 
 ## Цель задания
 
@@ -38,21 +38,27 @@ Kaspersky Endpoint Security – средство антивирусной защ
 2. Прокрутите страницу до блока "Kaspersky Endpoint Security для Windows"
 <img width="1301" alt="Снимок экрана 2024-02-11 в 16 10 36" src="https://github.com/netology-code/ibszi-homeworks/assets/96241243/8448bab4-184d-41e4-bc27-82222d9df3e6">
 
+
 3. Нажмите "Показать версии для загрузки" и нажмите "Скачать"
 <img width="1303" alt="Снимок экрана 2024-02-11 в 16 12 58" src="https://github.com/netology-code/ibszi-homeworks/assets/96241243/69a73b8c-7988-4617-8974-53ab68f77142">
+
 
 4. Запустите скачанный файл на виртуальной машине. Нажмите "Далее".
 <img width="497" alt="Снимок экрана 2024-02-11 в 16 48 08" src="https://github.com/netology-code/ibszi-homeworks/assets/96241243/5cd735c6-13c8-4a47-a81e-99ed5a905773">
 
+
 5. Нажмите "Распаковать" и дождитесь окончания.
 <img width="497" alt="Снимок экрана 2024-02-11 в 16 49 35" src="https://github.com/netology-code/ibszi-homeworks/assets/96241243/c33eeb5c-db4f-48f9-9151-96431bb9c892">
+
 
 6. Запустите файл установки "setup_kes"
 <img width="1014" alt="Снимок экрана 2024-02-11 в 16 51 29" src="https://github.com/netology-code/ibszi-homeworks/assets/96241243/28c904ab-21af-4ab5-9b9d-da650819b0a2">
 
+
 7. Не меняйте никакие параметры, просто нажимайте "Далее" и "Установить". Дождитесь окончания установки и нажмите "Готово".
 8. Откройте "Пуск" и запустите Kaspersky Endpoint Security.
 <img width="644" alt="Снимок экрана 2024-02-11 в 16 56 51" src="https://github.com/netology-code/ibszi-homeworks/assets/96241243/67e4d57f-8455-42b7-9ed1-5f1b4ef70ef0">
+
 
 9. Согласитесь участвовать в KSN, нажав "Я согласен".
 <img width="833" alt="Снимок экрана 2024-02-11 в 17 00 41" src="https://github.com/netology-code/ibszi-homeworks/assets/96241243/29d28f6d-3513-45f1-bc8d-4720595cddce">
