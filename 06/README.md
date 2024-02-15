@@ -104,7 +104,6 @@ sudo apache2ctl -t
 Если все верно - отобразится Syntax OK
 ![Снимок экрана 2024-02-15 205749](https://github.com/netology-code/ibszi-homeworks/assets/96241243/b103892b-5827-4869-a3fc-49c672482993)
 
-
 19) Для применения новых настроек перезапустим веб-сервер
 sudo systemctl restart apache2
 
