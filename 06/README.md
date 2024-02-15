@@ -108,7 +108,7 @@ WAF позволяет блокировать сетевые атаки на web
 - `sudo systemctl restart apache2`
 
 20) Протестируем работу нашего веб-сервера в обычном режиме, перейдя по адресу в браузере http://localhost
-![Снимок экрана 2024-02-15 205749](https://github.com/netology-code/ibszi-homeworks/assets/96241243/2aef84a4-e4e6-4f75-b805-00b6728cb5f0)
+![Снимок экрана 2024-02-15 205749](https://github.com/netology-code/ibszi-homeworks/assets/96241243/50ba9633-0cb2-4fa9-9ab9-b7c30d22a1cb)
 
 21) Имитируем SQL-инъекцию `http://localhost/?name=sasha or '1'='1'`. WAF заблокирует атаку, выдав 403 код.
 
