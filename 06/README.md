@@ -54,7 +54,7 @@ WAF позволяет блокировать сетевые атаки на web
 
 Здесь необходимо убедиться, что файл содержит следующую строку:
 - `IncludeOptional /etc/modsecurity/*.conf`
-- `Данная строка описывает, где будут храниться конфигурационные файлы Modsecurity`
+Данная строка описывает, где будут храниться конфигурационные файлы Modsecurity
 
 8) Перейдем в директорию /etc/modsecurity/, после чего файл modsecurity.conf-recommended переименуем в modsecurity.conf
 - `cd /etc/modsecurity/`
