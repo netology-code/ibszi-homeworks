@@ -63,8 +63,8 @@ WAF позволяет блокировать сетевые атаки на web
 9) Откроем файл для редактирования
 - `sudo nano modsecurity.conf`
 
-- В файле найдем строку "SecRuleEngine DetectionOnly" и приведем ее к виду "SecRuleEngine On"
-- А строку "SecAuditLogParts ABDEFHIJZ" приведем к виду "SecAuditLogParts ABCEFHJKZ"
+- В файле найдем строку "SecRuleEngine DetectionOnly" и приведем ее к виду "SecRuleEngine On" (для того, чтобы WAF не только детектировал, но и блокировал атаки)
+- А строку "SecAuditLogParts ABDEFHIJZ" приведем к виду "SecAuditLogParts ABCEFHJKZ" (настройка лоширования)
 - Сохраним файл (Crtl  - O) и закроем (Ctrl - X).
 
 10) Перезапустим веб-сервер, чтобы применить изменения.
