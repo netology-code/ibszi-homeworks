@@ -64,7 +64,7 @@ WAF позволяет блокировать сетевые атаки на web
 
 10. В файле найдём строку `SecRuleEngine DetectionOnly` и приведем ее к виду `SecRuleEngine On` для того, чтобы WAF не только детектировал, но и блокировал атаки.
 
-Строку `SecAuditLogParts ABDEFHIJZ` приведём к виду `SecAuditLogParts ABCEFHJKZ` (настройка лоширования). Сохраним файл (Crtl - O) и закроем (Ctrl - X).
+Строку `SecAuditLogParts ABDEFHIJZ` приведём к виду `SecAuditLogParts ABCEFHJKZ` (настройка логирования). Сохраним файл (Crtl - O) и закроем (Ctrl - X).
 
 11. Перезапустим веб-сервер, чтобы применить изменения:
 - `sudo systemctl restart apache2`.
