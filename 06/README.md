@@ -32,55 +32,45 @@ WAF позволяет блокировать сетевые атаки на web
 
 ### Алгоритм выполнения
 
-1. Обновим индекс пакетов:
-- `sudo apt update`.
+1. Обновим индекс пакетов: `sudo apt update`.
 
-2. Установим веб-сервер Apache и пакет wget:
-- `sudo apt install apache2 wget`.
+2. Установим веб-сервер Apache и пакет wget: `sudo apt install apache2 wget`.
 
-3. Установим ModeSecurity:
-- `sudo apt install libapache2-mod-security2`.
+3. Установим ModeSecurity: `sudo apt install libapache2-mod-security2`.
 
-4. Запустим ModeSecurity:
-- `sudo a2enmod security2`.
+4. Запустим ModeSecurity: `sudo a2enmod security2`.
 
-5. Перзапустим веб-сервер для применения изменений:
-- `sudo systemctl restart apache2`.
+5. Перзапустим веб-сервер для применения изменений: `sudo systemctl restart apache2`.
 
 6. Перейдём в каталог `/etc/apache2/mods-enabled/`, после чего откроем для редактирования файл `security2.conf`:
 - `cd /etc/apache2/mods-enabled/`,
 - `sudo nano security2.conf`.
 
-7. Убедимся, что файл содержит следующую строку:
-- `IncludeOptional /etc/modsecurity/*.conf`.
+7. Убедимся, что файл содержит следующую строку: `IncludeOptional /etc/modsecurity/*.conf`.
+
 Эта строка описывает, где будут храниться конфигурационные файлы Modsecurity.
 
 8. Перейдём в директорию `/etc/modsecurity/`, после чего файл `modsecurity.conf-recommended` переименуем в `modsecurity.conf`:
 - `cd /etc/modsecurity/`,
 - `sudo mv modsecurity.conf-recommended modsecurity.conf`.
 
-9. Откроем файл для редактирования:
-- `sudo nano modsecurity.conf`.
+9. Откроем файл для редактирования: `sudo nano modsecurity.conf`.
 
 10. В файле найдём строку `SecRuleEngine DetectionOnly` и приведем ее к виду `SecRuleEngine On` для того, чтобы WAF не только детектировал, но и блокировал атаки.
 
-Строку `SecAuditLogParts ABDEFHIJZ` приведём к виду `SecAuditLogParts ABCEFHJKZ` (настройка логирования). Сохраним файл (Crtl - O) и закроем (Ctrl - X).
+Строку `SecAuditLogParts ABDEFHIJZ` приведём к виду `SecAuditLogParts ABCEFHJKZ` (настройка логирования). Сохраним файл - `Crtl+O` и закроем - `Ctrl+X`.
 
-11. Перезапустим веб-сервер, чтобы применить изменения:
-- `sudo systemctl restart apache2`.
+11. Перезапустим веб-сервер, чтобы применить изменения: `sudo systemctl restart apache2`.
 
 12. Перейдём в директорию `/tmp` и загрузим архив с базовым набором правил:
 - `cd /tmp/`,
 - `wget https://github.com/coreruleset/coreruleset/archive/refs/tags/v3.3.2.tar.gz`.
 
-13. Разархивируем файл:
-- `tar xvf v3.3.2.tar.gz`.
+13. Разархивируем файл: `tar xvf v3.3.2.tar.gz`.
 
-14. Для сохранения файлов CRS создадим каталог `modsecurity-crs`:
-- `sudo mkdir /etc/apache2/modsecurity-crs/`
+14. Для сохранения файлов CRS создадим каталог `modsecurity-crs`: `sudo mkdir /etc/apache2/modsecurity-crs/`
 
-15. После чего переместим в него содержимое распакованного архива:
-- `sudo mv coreruleset-3.3.2/ /etc/apache2/modsecurity-crs/`.
+15. После чего переместим в него содержимое распакованного архива: `sudo mv coreruleset-3.3.2/ /etc/apache2/modsecurity-crs/`.
 
 16. Перейдём в директорию `coreruleset-3.3.2/` и создадим там файл конфигурации CRS с использованием файла-примера:
 - `cd /etc/apache2/modsecurity-crs/coreruleset-3.3.2/`,
@@ -96,16 +86,14 @@ WAF позволяет блокировать сетевые атаки на web
 - `IncludeOptional /etc/apache2/modsecurity-crs/coreruleset-3.3.2/crs-setup.conf`,
 - `IncludeOptional /etc/apache2/modsecurity-crs/coreruleset-3.3.2/rules/*.conf`.
 
-Сохраним файл (Crtl - O) и закроем (Ctrl - X).
+Сохраним файл - `Crtl+O` и закроем - `Ctrl+X`.
 
-19. Протестируем конфигурацию веб-сервера:
-- `sudo apache2ctl -t`,
+19. Протестируем конфигурацию веб-сервера: `sudo apache2ctl -t`,
 
 Если всё верно, отобразится Syntax OK:
 ![Снимок экрана 2024-02-15 205749](https://github.com/netology-code/ibszi-homeworks/assets/96241243/b103892b-5827-4869-a3fc-49c672482993)
 
-20. Для применения новых настроек перезапустим веб-сервер:
-- `sudo systemctl restart apache2`.
+20. Для применения новых настроек перезапустим веб-сервер: `sudo systemctl restart apache2`.
 
 21. Протестируем работу нашего веб-сервера в обычном режиме, перейдя по адресу в браузере: `http://localhost`:
 ![Снимок экрана 2024-02-15 205749](https://github.com/netology-code/ibszi-homeworks/assets/96241243/50ba9633-0cb2-4fa9-9ab9-b7c30d22a1cb)
